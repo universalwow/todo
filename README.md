@@ -2,30 +2,18 @@
 
 ## Overview
 
-This repository contains a small web app for Linear ticket `UNI-7` (新增todo列表).
+This repository contains a Phoenix (Elixir) app for Linear ticket `UNI-7` (新增todo列表).
 
 ## Development
 
-- Install dependencies:
+The Phoenix app lives in `uni_7/`.
 
 ```bash
-cd web
-npm install
+cd uni_7
+mix deps.get
+mix ecto.setup
+mix phx.server
 ```
 
-- Start dev server:
-
-```bash
-cd web
-npm run dev
-```
-
-- Lint / test / build:
-
-```bash
-cd web
-npm run lint
-npm run test
-npm run build
-```
+Then open `http://localhost:4000/` (it redirects to `/todos`).
 
