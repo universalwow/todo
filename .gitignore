@@ -1,0 +1,26 @@
+.DS_Store
+
+# Cursor + Symphony orchestration metadata (contains secrets/config)
+.cursor/
+.symphony_*
+
+.DS_Store
+
+# Cursor / Symphony
+.cursor/
+.symphony_*
+
+# Elixir / Phoenix
+/_build/
+/deps/
+/*.ez
+erl_crash.dump
+
+# Assets
+/assets/node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Coverage / artifacts
+/cover/
