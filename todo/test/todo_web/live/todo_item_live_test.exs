@@ -81,7 +81,7 @@ defmodule TodoWeb.TodoItemLiveTest do
     test "displays todo_item", %{conn: conn, todo_item: todo_item} do
       {:ok, _show_live, html} = live(conn, ~p"/todos/#{todo_item}")
 
-      assert html =~ "Show Todo item"
+      assert html =~ "待办详情"
       assert html =~ todo_item.title
     end
 
@@ -90,11 +90,11 @@ defmodule TodoWeb.TodoItemLiveTest do
 
       assert {:ok, form_live, _} =
                show_live
-               |> element("a", "Edit")
+               |> element("a", "编辑")
                |> render_click()
                |> follow_redirect(conn, ~p"/todos/#{todo_item}/edit?return_to=show")
 
-      assert render(form_live) =~ "Edit Todo item"
+      assert render(form_live) =~ "编辑待办"
 
       assert form_live
              |> form("#todo_item-form", todo_item: @invalid_attrs)
@@ -107,7 +107,7 @@ defmodule TodoWeb.TodoItemLiveTest do
                |> follow_redirect(conn, ~p"/todos/#{todo_item}")
 
       html = render(show_live)
-      assert html =~ "Todo item updated successfully"
+      assert html =~ "待办已更新"
       assert html =~ "some updated title"
     end
   end

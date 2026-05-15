@@ -10,15 +10,15 @@ defmodule TodoWeb.TodoItemLive.Form do
     <Layouts.app flash={@flash}>
       <.header>
         {@page_title}
-        <:subtitle>Use this form to manage todo_item records in your database.</:subtitle>
+        <:subtitle>修改待办内容与完成状态</:subtitle>
       </.header>
 
       <.form for={@form} id="todo_item-form" phx-change="validate" phx-submit="save">
-        <.input field={@form[:title]} type="text" label="Title" />
-        <.input field={@form[:completed]} type="checkbox" label="Completed" />
+        <.input field={@form[:title]} type="text" label="内容" />
+        <.input field={@form[:completed]} type="checkbox" label="已完成" />
         <footer>
-          <.button phx-disable-with="Saving..." variant="primary">Save Todo item</.button>
-          <.button navigate={return_path(@return_to, @todo_item)}>Cancel</.button>
+          <.button phx-disable-with="保存中..." variant="primary">保存</.button>
+          <.button navigate={return_path(@return_to, @todo_item)}>取消</.button>
         </footer>
       </.form>
     </Layouts.app>
@@ -40,7 +40,7 @@ defmodule TodoWeb.TodoItemLive.Form do
     todo_item = Todos.get_todo_item!(id)
 
     socket
-    |> assign(:page_title, "Edit Todo item")
+    |> assign(:page_title, "编辑待办")
     |> assign(:todo_item, todo_item)
     |> assign(:form, to_form(Todos.change_todo_item(todo_item)))
   end
@@ -49,7 +49,7 @@ defmodule TodoWeb.TodoItemLive.Form do
     todo_item = %TodoItem{}
 
     socket
-    |> assign(:page_title, "New Todo item")
+    |> assign(:page_title, "新增待办")
     |> assign(:todo_item, todo_item)
     |> assign(:form, to_form(Todos.change_todo_item(todo_item)))
   end
@@ -69,7 +69,7 @@ defmodule TodoWeb.TodoItemLive.Form do
       {:ok, todo_item} ->
         {:noreply,
          socket
-         |> put_flash(:info, "Todo item updated successfully")
+         |> put_flash(:info, "待办已更新")
          |> push_navigate(to: return_path(socket.assigns.return_to, todo_item))}
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -82,7 +82,7 @@ defmodule TodoWeb.TodoItemLive.Form do
       {:ok, todo_item} ->
         {:noreply,
          socket
-         |> put_flash(:info, "Todo item created successfully")
+         |> put_flash(:info, "待办已创建")
          |> push_navigate(to: return_path(socket.assigns.return_to, todo_item))}
 
       {:error, %Ecto.Changeset{} = changeset} ->
