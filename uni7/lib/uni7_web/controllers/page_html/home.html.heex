@@ -1,0 +1,12 @@
+<Layouts.flash_group flash={@flash} />
+<div class="card bg-base-200 border border-base-300">
+  <div class="card-body gap-3">
+    <h1 class="text-2xl font-semibold">Todo List</h1>
+    <p class="text-base-content/70">
+      A simple todo list built with Phoenix LiveView.
+    </p>
+    <div class="card-actions pt-2">
+      <.link navigate={~p"/todos"} class="btn btn-primary">Open Todos</.link>
+    </div>
+  </div>
+</div>

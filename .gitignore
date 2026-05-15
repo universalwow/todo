@@ -1,0 +1,11 @@
+.DS_Store
+
+# Cursor / Symphony orchestration artifacts (may contain secrets)
+.cursor/
+.symphony_agent_prompt.md
+.symphony_cursor_mcp_managed
+.symphony_cursor_mcp_managed/
+
+.cursor/
+.symphony_agent_prompt.md
+.symphony_cursor_mcp_managed
