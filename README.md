@@ -1,10 +1,14 @@
-# UNI-8
+# UNI-7
 
 ## Overview
 
-This repository was bootstrapped for Linear ticket `UNI-8` (新增 readme 文件).
+This repository contains a Phoenix (Elixir) todo list app for Linear ticket `UNI-7` (新增todo列表).
 
 ## Development
 
-No application code has been added yet.
+- App lives in `todo/`.
+- Run the server:
+  - `cd todo`
+  - `mix setup`
+  - `mix phx.server`
 
