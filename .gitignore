@@ -1,5 +1,11 @@
 .DS_Store
 
+# Cursor + Symphony orchestration metadata (contains secrets/config)
+.cursor/
+.symphony_*
+
+.DS_Store
+
 # Cursor / Symphony
 .cursor/
 .symphony_*
