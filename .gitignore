@@ -1,0 +1,20 @@
+.DS_Store
+.elixir_ls/
+_build/
+deps/
+cover/
+doc/
+tmp/
+
+# Phoenix assets
+assets/node_modules/
+priv/static/assets/
+
+# Runtime secrets / local env
+.env
+.env.*
+
+# Cursor / orchestration artifacts (may contain secrets)
+.cursor/
+.symphony_cursor_mcp_managed
+
