@@ -16,5 +16,6 @@ priv/static/assets/
 
 # Cursor / orchestration artifacts (may contain secrets)
 .cursor/
+.symphony_agent_prompt.md
 .symphony_cursor_mcp_managed
 
